@@ -1,5 +1,9 @@
 <template>
-  <Tutorial />
+<div>
+  <div class="container">
+  Base App
+  </div>
+</div>
 </template>
 
 <script>
