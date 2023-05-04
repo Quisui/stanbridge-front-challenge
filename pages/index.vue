@@ -5,6 +5,10 @@
         <div class="col text-center">
           <div class="card">
             <div class="card-body">
+              <h1 class="text-success">Welcome to my challenge</h1>
+              <h1>
+                🥳
+              </h1>
               <nuxt-link to="/courses">
                 <h3 class="text-dark">
                   Click here to check courses

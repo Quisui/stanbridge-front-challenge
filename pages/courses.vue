@@ -10,7 +10,7 @@
         <div class="row">
           <div class="col d-flex justify-content-between text-right mt-2">
             <BaseButton class="btn-sm w-25" @click="refreshTable">
-              Reload All
+              Reload All 👾
             </BaseButton>
             <BaseCheckBox
               v-model="showPresentAbsent"

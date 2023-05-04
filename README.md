@@ -28,12 +28,10 @@ $ npm run generate
 
 # Challenge Description
 As requested a courses route was added  to call the only course at the moment seeded by the laravel api db and assigned to an specific instructor so how I did it? <br />
-On the [courses route](https://github.com/Quisui/stanbridge-front-challenge/tree/master/pages): /courses I included all the baseComponents needed so check the code and review my implementation, this is the final result: <br />
-
-## Update Status of the student
-As requested we implemented the emit events as well to call an endpoint and update the data for that specific user in the db, check, [BaseTable](https://github.com/Quisui/stanbridge-front-challenge/blob/master/components/BaseTable.vue)>changePresentStatus()
+On the [courses route](): /courses I included all the baseComponents needed so check the code and review my implementation, this is the final result: <br />
+# Update Status of the student
+As requested we implemented the emit events as well to call an endpoint and update the data for that specific user in the db, check, BaseTable>changePresentStatus()
 Ideally this would be a method in the courses parent call and then we would be adding a template scoped-slot to call it but for keep it simple i did it on this way
-
 ## -- Filters --
 - Refresh All data: <br />
 I included a base button instance to refresh the whole table to have Present and Absent students, this will set just the url to basic, check method >courses>refreshTable() <br />

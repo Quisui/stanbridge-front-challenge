@@ -9,8 +9,8 @@
         </BaseCheckBox>
       </template>
       <template #table-caption>
-        <h6 class="feature-title mx-auto"> <b>Course</b>: {{ courseName }}</h6>
-        <h6 class="feature-title mx-auto"> <b>Instructor</b>: {{ instructorName }}</h6>
+        <h6 class="feature-title mx-auto"> 📚 <b>Course</b>: {{ courseName }}</h6>
+        <h6 class="feature-title mx-auto"> 👨🏻‍🏫 <b>Instructor</b>: {{ instructorName }}</h6>
       </template>
     </b-table>
 </template>
