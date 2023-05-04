@@ -1,6 +1,8 @@
 # standbridge-front-challenge
 
 ## Build Setup
+### Change your env file and point to 
+BASE_URL=http://127.0.0.1:8000 <-> you can change this
 
 ```bash
 # install dependencies
@@ -16,8 +18,70 @@ $ npm run start
 # generate static project
 $ npm run generate
 ```
+## Libraries Included
+1. Bootstrap Vue
+2. Axios
+3. vue-server-renderer for better performance and hydration in browser
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+# Challenge Description
+As requested a courses route was added  to call the only course at the moment seeded by the laravel api db and assigned to an specific instructor so how I did it? <br />
+On the [courses route](): /courses I included all the baseComponents needed so check the code and review my implementation, this is the final result: <br />
+
+## -- Filters --
+- Refresh All data: <br />
+I included a base button instance to refresh the whole table to have Present and Absent students, this will set just the url to basic, check method >courses>refreshTable() <br />
+
+- Toggle between Present|Absent 
+I included a base checkbox to toggle the whole table to have just Present or Absent students, this will set just the url params to present=true|false, check method >courses>changePresentAbsentApiCall(), we are using events from the base checkbox component like so <br />
+```js
+child
+  <b-form-checkbox v-model="checked" :class="inputClass" :name="checkName" switch v-on="$listeners" >
+``` <br />
+so we can call it like for example <br />
+```js
+parent
+<BaseCheckBox
+  v-model="showPresentAbsent"
+  class="align-self-center"
+  :checked-prop="showPresentAbsent === 0 ? false : true"
+  :check-name="'present-absent'" @change="changePresentAbsentApiCall"
+>
+  {{  showPresentAbsent ? 'Present' : 'Absent' }}
+</BaseCheckBox>
+``` <br />
+- Table Paginated
+for now we are paginating all courses so if you have multiple courses we could have those in here so we're calling the courses with instructors and students, then just showing the students in the table, the table is not that modular because that implementation would required a lot of cases, for practical and challenge proposes i leave it as it is for now. <br />
+check component: [component]()
+<br />
+Implementation: <br />
+```
+<BaseTable
+  :end-point-url="endpointUrl"
+  data-position="0"
+  data-route="[0].students"
+  head-variant="light"
+  :outlined="true"
+  :hover="true"
+  :no-border-collapse="true"
+  :current-page="currentPage"
+  :per-page="perPage"
+  :extra-params="extraParams"
+  :show-empty="true"
+  caption-top
+/>
+```
+
+--- Base components plugin allowed globally --- <br />
+Check this [file]() as it was implemented to include all base components and avoid injection in all places where you want to use it
+As well check [nuxt-config]() <br />
+Why i used nuxt? For practical proposes I used Nuxt to gain time on for example adding a new route everything is faster.
+--- Check all base components code --- <br />
+- BaseInput []()<br />
+- BaseSelect []()<br />
+- BaseButton []()<br />
+- BaseCheckBox []()<br />
+- BaseTable []()<br />
+
 
 ## Special Directories
 
