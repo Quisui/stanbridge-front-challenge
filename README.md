@@ -36,8 +36,10 @@ I included a base checkbox to toggle the whole table to have just Present or Abs
 ```js
 child
   <b-form-checkbox v-model="checked" :class="inputClass" :name="checkName" switch v-on="$listeners" >
-``` <br />
+```
+
 so we can call it like for example <br />
+
 ```js
 parent
 <BaseCheckBox
@@ -48,7 +50,8 @@ parent
 >
   {{  showPresentAbsent ? 'Present' : 'Absent' }}
 </BaseCheckBox>
-``` <br />
+``` 
+
 - Table Paginated
 for now we are paginating all courses so if you have multiple courses we could have those in here so we're calling the courses with instructors and students, then just showing the students in the table, the table is not that modular because that implementation would required a lot of cases, for practical and challenge proposes i leave it as it is for now. <br />
 check component: [component]()
